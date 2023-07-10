@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpx @11ty/eleventy --serve",
+    "build": "pnpx @11ty/eleventy",
     "create-post": "node script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
