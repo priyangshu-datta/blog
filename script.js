@@ -10,7 +10,7 @@ function fromCMD() {
     let frontMatter = new Map()
     frontMatter.set("title", "")
     frontMatter.set("desc", "")
-    frontMatter.set("date", new Date(new Date()- new Date(1000*60*60*5.5)).toISOString())
+    frontMatter.set("date", new Date(new Date() + new Date(1000*60*60*5.5)).toISOString())
     frontMatter.set("tags", [])
     const args = process.argv.slice(2)
     for (let i = 0; i < args.length - 1; i += 2) {
