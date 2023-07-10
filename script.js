@@ -10,6 +10,7 @@ function fromCMD() {
     let frontMatter = new Map()
     frontMatter.set("title", "")
     frontMatter.set("desc", "")
+    frontMatter.set("date", new Date().toISOString())
     frontMatter.set("tags", [])
     const args = process.argv.slice(2)
     for (let i = 0; i < args.length - 1; i += 2) {
@@ -44,7 +45,7 @@ fs.writeFileSync(
     layout: 'post.liquid'
     title: ${frontMatter.get("title")}
     desc: ${frontMatter.get("desc")}
-    date: Created
+    date: ${frontMatter.get("date")}
     tags: [post,${frontMatter.get("tags").join(", ")}]
 ---
 
