@@ -1,0 +1,61 @@
+---
+  layout: 'home.liquid'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default: 'Blog Post' }}</title>
+  </head>
+  <body>
+    <main style="width: 100%;">
+      {% assign postList = collections.post %}
+      {% assign postsCount = collections.post | size %}
+      {% for post in collections.post %}
+        {% if post.url == page.url %}
+          {% assign curr = forloop.index %}
+          {% if curr != 1 %}
+            {% assign prev = forloop.index0 | minus: 1 %}
+          {% endif %}
+          {% if curr != postsCount %}
+            {% assign next = forloop.index0 | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <div style="display: flex; gap: 0.4rem; margin: 1rem;">
+        {% assign tags = postList[0].data.tags | getTags %}
+        {% assign tags_len = tags | size %}
+        {% if tags_len > 0 %}
+          <h4>
+            Tags:
+          </h4>
+          <ul aria-roledescription="post tags" style="display: flex; gap: 0.2rem; flex-wrap: wrap;">
+            {% for tag in tags %}
+              <li style="list-style: none; display: inline;">
+                <a href="/tags/{{ tag }}/">
+                  #{{ tag }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <main style="margin: 1rem; ">
+        {{ content }}
+      </main>
+      <footer style="margin: 1rem; display: grid; grid-template-columns: 2;">
+
+        {% if prev %}
+          <a href={{ postList[prev].url }}>Previous Post: {{ postList[prev].data.title }}</a>
+        {% endif %}
+        {% if next %}
+          <a href={{ postList[next].url }} style="justify-self: right;">Next Post: {{ postList[next].data.title }}</a>
+        {% endif %}
+      </footer>
+    </main>
+  </body>
+</html>

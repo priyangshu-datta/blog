@@ -1,0 +1,7 @@
+{
+    "tabWidth": 4,
+    "htmlWhitespaceSensitivity": "strict",
+    "bracketSpacing": true,
+    "printWidth": 80,
+    "semi": false
+}

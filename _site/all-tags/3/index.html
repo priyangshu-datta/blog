@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags</title>
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .home-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 1rem;
+      }
+      nav {
+        grid-row: 1;
+      }
+      @media(min-width: 780px) {
+        .home-header {
+          grid-template-columns: 1fr 1fr;
+        }
+        h1 {
+          justify-self: self-start;
+        }
+        nav {
+          grid-column: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="home-header" style="margin-inline: 1rem; margin-block: 0.5rem;">
+      <h1 style="text-align: center;">
+        Tags
+      </h1>
+      
+      <nav style="width: fit-content; margin-left: auto;">
+        <ul style="display: flex; gap: 1rem;">
+          
+            <li style="list-style: none;">
+              <a href=/>
+                Home
+              </a>
+            </li>
+          
+            <li style="list-style: none;">
+              <a href=/all-tags/>
+                Tags
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </header>
+    
+
+<ol style="width: 60%; margin-inline: auto; display: flex; gap: 1rem;">
+  
+  
+    <li style="list-style: none;">
+      <a href="/tags/neuralnetworks">
+        #neuralnetworks
+      </a>
+    </li>
+  
+    <li style="list-style: none;">
+      <a href="/tags/transformers">
+        #transformers
+      </a>
+    </li>
+  
+    <li style="list-style: none;">
+      <a href="/tags/deeplearning">
+        #deeplearning
+      </a>
+    </li>
+  
+</ol>
+  </body>
+</html>

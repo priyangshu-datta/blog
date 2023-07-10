@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+       main { width: 100%; margin-inline: auto; display: grid; grid-template-columns: 1fr; gap: 2rem; } @media (min-width: 780px){ main{ grid-template-columns: 1fr 1fr; } } article { padding: 0.5rem; display: grid; gap: 1rem; width: 80%; margin-inline: auto; } article:not(:last-child) { margin-bottom: 1rem; } p { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; } span { font-size: 0.7rem; } h3 { text-decoration: none; } 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .home-header {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 1rem;
+      }
+      nav {
+        grid-row: 1;
+      }
+      @media(min-width: 780px) {
+        .home-header {
+          grid-template-columns: 1fr 1fr;
+        }
+        h1 {
+          justify-self: self-start;
+        }
+        nav {
+          grid-column: 2;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="home-header" style="margin-inline: 1rem; margin-block: 0.5rem;">
+      <h1 style="text-align: center;">
+        Home
+      </h1>
+      
+      <nav style="width: fit-content; margin-left: auto;">
+        <ul style="display: flex; gap: 1rem;">
+          
+            <li style="list-style: none;">
+              <a href=/>
+                Home
+              </a>
+            </li>
+          
+            <li style="list-style: none;">
+              <a href=/all-tags/>
+                Tags
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </header>
+    
+
+
+
+  <ol style="display: flex; gap: 1rem; margin-left: auto; width: fit-content; margin-right: 1rem; margin-block: 1rem;">
+
+    
+
+    
+      <li style="list-style: none; display: inline;">
+        
+          Page 1
+        
+      </li>
+    
+
+    
+  </ol>
+
+
+  <main>
+    
+      <article>
+        <header>
+          <h3>
+            <a href=/posts/lstm/>
+              LSTM
+            </a>
+          </h3>
+        </header>
+        <p>Introduction to LSTM</p>
+
+        
+        
+        
+          <small aria-roledescription="post tags" style="display: flex; gap: 0.2rem; flex-wrap: wrap;">
+            
+              <a href="/tags/deeplearning/">
+                #deeplearning
+              </a>
+            
+              <a href="/tags/neuralnetworks/">
+                #neuralnetworks
+              </a>
+            
+          </small>
+        
+
+        <span aria-roledescription="post date" style="display: flex; gap: 0.3rem;">
+          Monday &middot;
+           July 10, 2023 &middot;
+           17:13:20
+        </span>
+      </article>
+    
+      <article>
+        <header>
+          <h3>
+            <a href=/posts/transformers-in-nlp/>
+              Transformers in NLP
+            </a>
+          </h3>
+        </header>
+        <p>Introduction to Transformers</p>
+
+        
+        
+        
+          <small aria-roledescription="post tags" style="display: flex; gap: 0.2rem; flex-wrap: wrap;">
+            
+              <a href="/tags/neuralnetworks/">
+                #neuralnetworks
+              </a>
+            
+              <a href="/tags/transformers/">
+                #transformers
+              </a>
+            
+          </small>
+        
+
+        <span aria-roledescription="post date" style="display: flex; gap: 0.3rem;">
+          Monday &middot;
+           July 10, 2023 &middot;
+           15:19:32
+        </span>
+      </article>
+    
+  </main>
+
+  </body>
+</html>

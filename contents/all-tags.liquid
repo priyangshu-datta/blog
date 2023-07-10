@@ -1,0 +1,21 @@
+---
+    layout: 'home.liquid'
+    eleventyNavigation:
+        key: Tags
+    pagination:
+        data: collections
+        size: 1
+    title: Tags
+---
+
+
+<ol style="width: 60%; margin-inline: auto; display: flex; gap: 1rem;">
+  {% assign tags = collections.all | tagSortByMaxPosts %}
+  {% for tag in tags %}
+    <li style="list-style: none;">
+      <a href="/tags/{{tag}}">
+        #{{ tag }}
+      </a>
+    </li>
+  {% endfor %}
+</ol>
